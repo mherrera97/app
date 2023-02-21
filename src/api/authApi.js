@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const authApi = axios.create({
-  baseURL: "https://181.129.63.226:85/api/v1",
-  // baseURL: "https://gestor.clinicasomer.com/api/v1",
+  // baseURL: "https://181.129.63.226:85/api/v1",
+  baseURL: "https://gestor.clinicasomer.com/api/v1",
   //   httpsAgent: new https.Agent({
   //     rejectUnauthorized: false,
   //   }),
