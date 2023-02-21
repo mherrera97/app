@@ -10,7 +10,7 @@ export const useAuthStore = () => {
   const startLogin = async ({ usuario, password }) => {
     dispatch(checkCredenciales());
     try {
-      const resp = await authApi.post("/login", {
+      const resp = await authApi.post("/auth", {
         usuario,
         clave: password,
       });
