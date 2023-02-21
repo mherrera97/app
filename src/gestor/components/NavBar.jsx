@@ -43,7 +43,7 @@ export const NavBar = () => {
               <img src="../../src/assets/images/logoSomerBnco.png" sx={{ margin: "auto" }} width="100" alt="Logo Somer" />
             </Box>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Gestor Clinico V3
+              Gestor Clinico
             </Typography>
             {/* estado de la base de datos */}
             <BdStatus />
