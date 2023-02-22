@@ -1,43 +1,30 @@
-import { useEffect, useMemo } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
-import { AuthRoutes } from '../auth/routes/AuthRoutes';
-import { GestorRoutes } from '../gestor/routes/GestorRoutes';
-import { useAuthStore } from '../hooks';
-import { Loader } from '../ui/Loader';
-
+import { AuthRoutes } from "../auth/routes/AuthRoutes";
+import { GestorRoutes } from "../gestor/routes/GestorRoutes";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
-
-  const { status, checkAuthToken } = useAuthStore();
-
-  useEffect(() => {
-    checkAuthToken();
-  }, []);
-
-
-  if (status === "checking") {
-    return (
-      <Loader />
-    );
-  }
-
-
-
   return (
     <Routes>
-      {status === "not-authenticated" ? (
-        <>
-          {/* Login y Registro */}
-          <Route path="/auth/*" element={<AuthRoutes />} />
-          <Route path="/*" element={<Navigate to="/auth/login" />} />
-        </>
-      ) : (
-        <>
-          {/* GestorApp */}
-          <Route path="/*" element={<GestorRoutes />} />
-        </>
-      )}
+      <Route
+        path="/auth/*"
+        element={
+          <PublicRoute>
+            <AuthRoutes />
+          </PublicRoute>
+        }
+      />
+      <Route
+        exact
+        path="/*"
+        element={
+          <PrivateRoute>
+            <GestorRoutes />
+          </PrivateRoute>
+        }
+      />
     </Routes>
-  )
-}
+  );
+};

@@ -1,14 +1,15 @@
 import axios from "axios";
 
-const authApi = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+const usuariosApi = axios.create({
+  baseURL: import.meta.env.VITE_API_URL + "usuarios",
 });
-// interceptors
-authApi.interceptors.request.use((config) => {
+
+usuariosApi.interceptors.request.use((config) => {
   config.headers = {
     ...config.headers,
     Authorization: `Bearer ${window.localStorage.getItem("token") || ""}`,
   };
   return config;
 });
-export default authApi;
+
+export default usuariosApi;

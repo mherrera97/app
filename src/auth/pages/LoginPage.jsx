@@ -10,9 +10,9 @@ import Typography from "@mui/material/Typography";
 import { Modo } from "../../ui/Modo";
 import { Slider } from "../../ui/Slider";
 import { useForm } from "../../hooks/useForm";
-import { checkAuth } from "../../store/thunks";
 import { useAuthStore } from "../../hooks";
 import { Alert } from "@mui/material";
+
 function Copyright(props) {
   return (
     <Typography
@@ -32,8 +32,7 @@ function Copyright(props) {
 }
 
 export const LoginPage = () => {
-
-  const { status, error } = useSelector(state => state.auth);
+  const { status, error } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
@@ -43,9 +42,8 @@ export const LoginPage = () => {
 
   const { usuario, password, onInputChange, onResetForm, formState } = useForm({
     usuario: "",
-    password: ""
+    password: "",
   });
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -54,7 +52,10 @@ export const LoginPage = () => {
     //   email: data.get("usuario"),
     //   password: data.get("password"),
     // });
-    startLogin({ usuario: data.get("usuario"), password: data.get("password") });
+    startLogin({
+      usuario: data.get("usuario"),
+      password: data.get("password"),
+    });
     // dispatch(checkAuth(data.get("usuario"), data.get("password")));
   };
 
@@ -87,15 +88,14 @@ export const LoginPage = () => {
             alignItems: "center",
           }}
         >
-          <Typography variant="h3" sx={{ fontWeight: "bold", mt: { xl: 8 }, textAlign: "center" }}>
+          <Typography
+            variant="h3"
+            sx={{ fontWeight: "bold", mt: { xl: 8 }, textAlign: "center" }}
+          >
             Gestor Clínico
           </Typography>
           <Typography variant="i">Inicio de Sesión</Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            sx={{ mt: 2 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
             <TextField
               margin="normal"
               required
@@ -129,7 +129,13 @@ export const LoginPage = () => {
             >
               Ingresar
             </Button>
-            {error ? (<Alert variant="filled" severity="error">{error}</Alert>) : ("")}
+            {error ? (
+              <Alert variant="filled" severity="error">
+                {error}
+              </Alert>
+            ) : (
+              ""
+            )}
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
