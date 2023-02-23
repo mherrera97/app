@@ -94,7 +94,7 @@ export const LoginPage = () => {
             variant="h3"
             sx={{ fontWeight: "bold", mt: { xl: 8 }, textAlign: "center" }}
           >
-            Gestor Clínico marlon
+            Gestor Clínico
           </Typography>
           <Typography variant="i">Inicio de Sesión</Typography>
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
