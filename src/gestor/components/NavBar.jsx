@@ -1,30 +1,28 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
-
-import { UserMenu } from './UserMenu';
+import { UserMenu } from "./UserMenu";
 import { Notifications } from "./Notifications";
-import { BdStatus } from './BdStatus';
-import { SideBar } from './SideBar';
-import { onViewMenu } from '../../store/slices';
+import { BdStatus } from "./BdStatus";
+import { SideBar } from "./SideBar";
+import { onViewMenu } from "../../store/slices";
 
+import logo from "../../assets/images/logoSomerBnco.png";
 
 export const NavBar = () => {
-
   const { visible } = useSelector((state) => state.menu);
 
   const dispatch = useDispatch();
 
   const handleShowMenu = () => {
     dispatch(onViewMenu(!visible));
-  }
-
+  };
 
   return (
     <>
@@ -43,7 +41,12 @@ export const NavBar = () => {
               <MenuIcon />
             </IconButton>
             <Box sx={{ display: { xs: "none", sm: "block" }, flexGrow: 1 }}>
-              <img src="../../src/assets/images/logoSomerBnco.png" sx={{ margin: "auto" }} width="100" alt="Logo Somer" />
+              <img
+                src={logo}
+                sx={{ margin: "auto" }}
+                width="100"
+                alt="Logo Somer"
+              />
             </Box>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Gestor Clinico
@@ -57,5 +60,6 @@ export const NavBar = () => {
           </Toolbar>
         </AppBar>
       </Box>
-    </>);
-}
+    </>
+  );
+};

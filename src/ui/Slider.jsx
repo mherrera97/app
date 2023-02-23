@@ -1,3 +1,4 @@
+import React from "react";
 import Carousel from "react-material-ui-carousel";
 import {
   Avatar,
@@ -8,41 +9,46 @@ import {
   Typography,
 } from "@mui/material";
 
+import home from "../assets/images/home.png";
+import mos from "../assets/images/b_mos.png";
+import socios from "../assets/images/b_socios.png";
+import salud from "../assets/images/b_ssalud.png";
+import ucin from "../assets/images/b_ucin.png";
+
 export const Slider = () => {
   var Datos = [
     {
       name: "Clínica Somer",
       date: "Diciembre 19, 2022",
       description: "Probably the most random thing you have ever seen!",
-      url: "../src/assets/images/home.png",
+      url: home,
+    },
+    {
+      name: "Clínica Somer",
+      date: "Diciembre 19, 2022",
+      description: "Probably the most random thing you have ever seen!",
+      url: mos,
     },
     {
       name: "Clínica Somer",
       date: "Diciembre 19, 2022",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium ullam velit minima? Distinctio labore at saepe, natus laboriosam doloribus, soluta nam deserunt odit, aliquam necessitatibus eos rerum numquam aliquid?",
-      url: "../src/assets/images/backUno.jpg",
+      url: socios,
     },
     {
       name: "Clínica Somer",
       date: "Diciembre 19, 2022",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium ullam velit minima? Distinctio labore at saepe, natus laboriosam doloribus, soluta nam deserunt odit, aliquam necessitatibus eos rerum numquam aliquid?",
-      url: "../src/assets/images/b_mos.png",
+      url: salud,
     },
     {
       name: "Clínica Somer",
       date: "Diciembre 19, 2022",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium ullam velit minima? Distinctio labore at saepe, natus laboriosam doloribus, soluta nam deserunt odit, aliquam necessitatibus eos rerum numquam aliquid?",
-      url: "../src/assets/images/b_socios.png",
-    },
-    {
-      name: "Clínica Somer",
-      date: "Diciembre 19, 2022",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore accusantium ullam velit minima? Distinctio labore at saepe, natus laboriosam doloribus, soluta nam deserunt odit, aliquam necessitatibus eos rerum numquam aliquid?",
-      url: "../src/assets/images/b_ssalud.png",
+      url: ucin,
     },
   ];
 

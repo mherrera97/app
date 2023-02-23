@@ -1,7 +1,10 @@
 import axios from "axios";
+import {API_URL} from "../config/front.env.js";
+
+
 
 const authApi = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: API_URL,
 });
 // interceptors
 authApi.interceptors.request.use((config) => {

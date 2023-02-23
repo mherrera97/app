@@ -14,7 +14,9 @@ import ListItemText from "@mui/material/ListItemText";
 import { onViewMenu } from "../../store/slices";
 import { Modo } from "../../ui/Modo";
 
-import AttachFileIcon from '@mui/icons-material/AttachFile';
+import AttachFileIcon from "@mui/icons-material/AttachFile";
+
+import logo from "../..//assets/images/clinicasomer.png";
 
 export function SideBar() {
   const [state, setState] = useState({
@@ -56,11 +58,7 @@ export function SideBar() {
         >
           <ListItemButton sx={{ justifyContent: "center" }}>
             <ListItemIcon>
-              <img
-                src="../../src/assets/images/clinicasomer.png"
-                width="150"
-                alt="Logo Somer"
-              />
+              <img src={logo} width="150" alt="Logo Somer" />
             </ListItemIcon>
             {/* <ListItemText primary="pruebas de marlon" /> */}
           </ListItemButton>
@@ -79,14 +77,14 @@ export function SideBar() {
           disablePadding
         >
           <ListItemButton>
-            <AttachFileIcon/>
+            <AttachFileIcon />
             <ListItemText primary="Admin Local" />
           </ListItemButton>
         </ListItem>
         {menus.map((menu) => (
           <ListItem key={menu.id} disablePadding>
             <ListItemButton>
-              <AttachFileIcon /> 
+              <AttachFileIcon />
               <ListItemText primary={menu.nombre} />
             </ListItemButton>
           </ListItem>

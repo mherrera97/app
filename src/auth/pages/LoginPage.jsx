@@ -13,6 +13,8 @@ import { useForm } from "../../hooks/useForm";
 import { useAuthStore } from "../../hooks";
 import { Alert } from "@mui/material";
 
+import logo from "../../assets/images/clinicasomer.png";
+
 function Copyright(props) {
   return (
     <Typography
@@ -73,7 +75,7 @@ export const LoginPage = () => {
       >
         <Grid container>
           <Grid item xs={7}>
-            <img src="../src/assets/images/clinicasomer.png" width={150} />
+            <img src={logo} width={150} />
           </Grid>
           <Grid item xs={5} sx={{ textAlign: "right" }}>
             <Modo />
