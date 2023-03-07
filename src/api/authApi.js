@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const authApi = axios.create({
-  // baseURL: API_URL,
   baseURL: "https://gestor.clinicasomer.com/api/v1",
 });
 // interceptors
