@@ -2,7 +2,7 @@ import axios from "axios";
 import {API_URL} from "../../../config/front.env.js";
 
 const usuariosApi = axios.create({
-  baseURL: API_URL,
+  baseURL: "https://gestor.clinicasomer.com/api/v1/usuarios/",
 });
 
 usuariosApi.interceptors.request.use((config) => {
