@@ -1,5 +1,4 @@
 import axios from "axios";
-import { API_URL } from "../config/front.env.js";
 
 const authApi = axios.create({
   // baseURL: API_URL,
